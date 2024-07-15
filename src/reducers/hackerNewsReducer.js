@@ -4,7 +4,7 @@ import axios from 'axios'
 //set up the inital values
 let initialState= {
     loading: false,
-    article: []
+    articles: []
 }
 
 //create a async function called requestArticles that takes in the dispatch function as a paramter
@@ -15,7 +15,7 @@ export const requestArticles = async (dispatch) => {
 
     dispatch({
         type: 'REQUEST_ARTICLES',
-        payload: result
+        payload: result.data
       })
 }
 
@@ -28,7 +28,7 @@ const hackerNewsReducer = (state = initialState, action) => {
     
     case 'REQUEST_ARTICLES':
         console.log('Article reqeust hit')
-        return { loading: false, article: action.payload}
+        return { loading: false, articles: action.payload}
     
     default: return state
     }

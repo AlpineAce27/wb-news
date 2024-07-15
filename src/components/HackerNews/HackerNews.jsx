@@ -7,9 +7,7 @@ import { useEffect } from 'react';
 
 
 export default function HackerNews() {
-  const articles = useSelector((state) => { state.hackerNews.article
-    console.log(state)
-  });
+  const articles = useSelector((state) => state.hackerNews.articles);
   const loading = useSelector((state) => state.hackerNews.loading);
   const dispatch = useDispatch();
 
